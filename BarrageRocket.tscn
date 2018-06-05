@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Rocket.tscn" type="PackedScene" id=1]
+
+[sub_resource type="Gradient" id=4]
+
+offsets = PoolRealArray( 0, 0.224852, 0.384615, 0.609467 )
+colors = PoolColorArray( 1, 0, 0, 1, 0.941406, 0.794312, 0, 1, 0.402344, 0.402344, 0.402344, 1, 0.128906, 0.128906, 0.128906, 1 )
+
+[sub_resource type="GradientTexture" id=5]
+
+flags = 4
+gradient = SubResource( 4 )
+width = 128
+
+[sub_resource type="Curve" id=6]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0.00130202, 0.983398 ), 0.0, -1.8417, 0, 0, Vector2( 1, 0 ), -0.266056, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+
+flags = 4
+width = 2048
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=8]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 1
+emission_sphere_radius = 0.2
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = false
+spread = 5.0
+flatness = 0.0
+gravity = Vector3( 0, -0.2, 0 )
+initial_velocity = 0.1
+initial_velocity_random = 0.0
+angular_velocity = 0.037037
+angular_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 0.3
+scale_random = 0.0
+scale_curve = SubResource( 7 )
+color_ramp = SubResource( 5 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Resource", "Scale", "Spread", "Trail" ]
+
+[node name="Rocket" instance=ExtResource( 1 )]
+
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Particles" parent="." index="2"]
+
+amount = 50
+lifetime = 3.0
+process_material = SubResource( 8 )
+
+

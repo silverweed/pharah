@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/justice.ogg-dae90f040a9feaa37903ec2afe687253.oggstr"
+
+[deps]
+
+source_file="res://justice.ogg"
+source_md5="bd0a07d851e7535c1f9ff61662d9e096"
+
+dest_files=[ "res://.import/justice.ogg-dae90f040a9feaa37903ec2afe687253.oggstr" ]
+dest_md5="9f8364180e8ada883a73a045b3041e11"
+
+[params]
+
+loop=false
+loop_offset=0
