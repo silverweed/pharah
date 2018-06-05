@@ -1,4 +1,8 @@
 extends Sprite
 
 func _ready():
-	position = get_viewport_rect().size / 2
+	reposition()
+	$"/root/Globals".connect("window_size_changed", self, "reposition")
+	
+func reposition():
+	position = OS.window_size / 2
